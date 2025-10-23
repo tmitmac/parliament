@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Map - Square Parliament</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#1e3a8a'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen flex flex-col bg-gray-50">
+    <custom-navbar></custom-navbar>
+    
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-8 text-primary">House Chamber Map</h1>
+        
+        <div class="grid lg:grid-cols-2 gap-8">
+
+
+            
+           <!-- Chamber Diagram -->
+<div class="bg-white p-6 rounded-xl shadow-lg">
+    <h2 class="text-xl font-bold mb-4 text-primary">Chamber Layout</h2>
+
+    <!-- Replaced Diagram with Image -->
+    <div class="relative max-w-xl mx-auto">
+        <img src="assets/57th House Map.jpg" alt="Chamber Layout Diagram" class="rounded-lg shadow-md w-full">
+    </div>
+
+    <div class="mt-6 grid grid-cols-2 gap-4">
+        <div class="flex items-center">
+            <div class="w-4 h-4 bg-blue-500 rounded mr-2"></div>
+            <span class="text-sm">Government Members</span>
+        </div>
+        <div class="flex items-center">
+            <div class="w-4 h-4 bg-red-500 rounded mr-2"></div>
+            <span class="text-sm">Opposition Members</span>
+        </div>
+        <div class="flex items-center">
+            <div class="w-4 h-4 bg-green-500 rounded mr-2"></div>
+            <span class="text-sm">Minor Parties</span>
+        </div>
+        <div class="flex items-center">
+            <div class="w-4 h-4 bg-yellow-500 rounded mr-2"></div>
+            <span class="text-sm">Crossbench</span>
+        </div>
+    </div>
+</div>
+
+            
+            <!-- Building Map -->
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+                <h2 class="text-xl font-bold mb-4 text-primary">Parliament Building</h2>
+                <img src="http://static.photos/blue/1024x576/8" alt="Parliament Building" class="w-full h-64 object-cover rounded-lg mb-4">
+                
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="bg-primary bg-opacity-10 p-3 rounded-lg border border-primary border-opacity-20">
+                        <div class="bg-primary w-8 h-8 rounded-full flex items-center justify-center text-white mb-2">
+                            <i data-feather="home" class="w-4 h-4"></i>
+                        </div>
+                        <p class="text-sm font-medium">Main Entrance</p>
+                    </div>
+                    <div class="bg-primary bg-opacity-10 p-3 rounded-lg border border-primary border-opacity-20">
+                        <div class="bg-primary w-8 h-8 rounded-full flex items-center justify-center text-white mb-2">
+                            <i data-feather="users" class="w-4 h-4"></i>
+                        </div>
+                        <p class="text-sm font-medium">Public Gallery</p>
+                    </div>
+                    <div class="bg-primary bg-opacity-10 p-3 rounded-lg border border-primary border-opacity-20">
+                        <div class="bg-primary w-8 h-8 rounded-full flex items-center justify-center text-white mb-2">
+                            <i data-feather="coffee" class="w-4 h-4"></i>
+                        </div>
+                        <p class="text-sm font-medium">Members' Lounge</p>
+                    </div>
+                    <div class="bg-primary bg-opacity-10 p-3 rounded-lg border border-primary border-opacity-20">
+                        <div class="bg-primary w-8 h-8 rounded-full flex items-center justify-center text-white mb-2">
+                            <i data-feather="book" class="w-4 h-4"></i>
+                        </div>
+                        <p class="text-sm font-medium">Library</p>
+                    </div>
+                    <div class="bg-primary bg-opacity-10 p-3 rounded-lg border border-primary border-opacity-20">
+                        <div class="bg-primary w-8 h-8 rounded-full flex items-center justify-center text-white mb-2">
+                            <i data-feather="tv" class="w-4 h-4"></i>
+                        </div>
+                        <p class="text-sm font-medium">Media Center</p>
+                    </div>
+                    <div class="bg-primary bg-opacity-10 p-3 rounded-lg border border-primary border-opacity-20">
+                        <div class="bg-primary w-8 h-8 rounded-full flex items-center justify-center text-white mb-2">
+                            <i data-feather="clipboard" class="w-4 h-4"></i>
+                        </div>
+                        <p class="text-sm font-medium">Committee Rooms</p>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <h3 class="font-bold mb-2">Visitor Information</h3>
+                    <p class="text-sm text-gray-600 mb-4">The Parliament Building is open to the public Monday to Friday, 9am to 5pm. Guided tours are available at 10am and 2pm.</p>
+                    <a href="#" class="inline-block bg-primary text-white px-4 py-2 rounded-lg text-sm hover:bg-opacity-90 transition">Book a Tour</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Virtual Tour -->
+        <div class="mt-12 bg-white p-6 rounded-xl shadow-lg">
+            <h2 class="text-2xl font-bold mb-4 text-primary">Virtual Tour</h2>
+            <div class="aspect-w-16 aspect-h-9 bg-gray-200 rounded-lg overflow-hidden">
+                <iframe class="w-full h-96" src="https://www.youtube.com/embed/3j7uZzGmQ4o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="mt-4">
+                <p class="text-gray-600">Explore our 360° virtual tour of the Parliament Building and House Chamber.</p>
+            </div>
+        </div>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>feather.replace();</script>
+</body>
+</html>

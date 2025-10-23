@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History - Square Parliament</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#1e3a8a'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen flex flex-col bg-gray-50">
+    <custom-navbar></custom-navbar>
+    
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-3xl font-bold mb-8 text-primary text-center">History of the Square Parliament</h1>
+            
+            <!-- Timeline -->
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="absolute left-1/2 w-1 h-full bg-primary transform -translate-x-1/2"></div>
+                
+                <!-- Timeline items -->
+                <div class="mb-12">
+                    <div class="flex items-center mb-2">
+                        <div class="bg-primary rounded-full w-6 h-6 z-10"></div>
+                        <h2 class="text-xl font-bold ml-4">1950 - Foundation</h2>
+                    </div>
+                    <div class="ml-10 pl-4">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <p>The House of Representatives was established following Square Country's independence. The original constitution created a unicameral legislature with 26 seats representing the nation's square-shaped administrative divisions.</p>
+                            <div class="mt-4">
+                                <img src="http://static.photos/vintage/640x360/1" alt="Founding Parliament" class="rounded-lg w-full h-48 object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-12">
+                    <div class="flex items-center mb-2">
+                        <div class="bg-primary rounded-full w-6 h-6 z-10"></div>
+                        <h2 class="text-xl font-bold ml-4">1962 - First Elections</h2>
+                    </div>
+                    <div class="ml-10 pl-4">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <p>The first democratic elections were held, with the Square Party winning a majority. The Parliament Building was completed in the capital's central square.</p>
+                            <div class="mt-4">
+                                <img src="http://static.photos/vintage/640x360/2" alt="First Elections" class="rounded-lg w-full h-48 object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-12">
+                    <div class="flex items-center mb-2">
+                        <div class="bg-primary rounded-full w-6 h-6 z-10"></div>
+                        <h2 class="text-xl font-bold ml-4">1987 - Constitutional Reform</h2>
+                    </div>
+                    <div class="ml-10 pl-4">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <p>Major constitutional amendments were passed, including fixed parliamentary terms and changes to electoral boundaries. The reforms were celebrated as strengthening democracy.</p>
+                            <div class="mt-4">
+                                <img src="http://static.photos/vintage/640x360/3" alt="Constitutional Reform" class="rounded-lg w-full h-48 object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-12">
+                    <div class="flex items-center mb-2">
+                        <div class="bg-primary rounded-full w-6 h-6 z-10"></div>
+                        <h2 class="text-xl font-bold ml-4">1999 - Women's Representation</h2>
+                    </div>
+                    <div class="ml-10 pl-4">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <p>For the first time, women made up more than 50% of the House members, a milestone in Square Country's gender equality efforts. This was the result of voluntary party quotas.</p>
+                            <div class="mt-4">
+                                <img src="http://static.photos/vintage/640x360/4" alt="Women in Parliament" class="rounded-lg w-full h-48 object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-12">
+                    <div class="flex items-center mb-2">
+                        <div class="bg-primary rounded-full w-6 h-6 z-10"></div>
+                        <h2 class="text-xl font-bold ml-4">2010 - Digital Parliament</h2>
+                    </div>
+                    <div class="ml-10 pl-4">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <p>The Parliament implemented a comprehensive digital transformation, including live streaming of sessions, electronic voting, and online public petitions.</p>
+                            <div class="mt-4">
+                                <img src="http://static.photos/technology/640x360/5" alt="Digital Parliament" class="rounded-lg w-full h-48 object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Traditions Section -->
+            <section class="mt-16">
+                <h2 class="text-2xl font-bold mb-6 text-primary">Parliamentary Traditions</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-primary p-3 rounded-full mr-4">
+                                <i data-feather="award" class="text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Opening Ceremony</h3>
+                        </div>
+                        <p class="text-gray-700">Each parliamentary year begins with a formal ceremony where the Speaker leads a procession around the square-shaped chamber before taking their seat.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-primary p-3 rounded-full mr-4">
+                                <i data-feather="book" class="text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">The Square Mace</h3>
+                        </div>
+                        <p class="text-gray-700">A ceremonial square-shaped mace is placed on the table when the House is in session, symbolizing the authority of Parliament.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-primary p-3 rounded-full mr-4">
+                                <i data-feather="mic" class="text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Four-Corner Debate</h3>
+                        </div>
+                        <p class="text-gray-700">Major debates follow a unique format where speakers rotate between four positions representing different perspectives.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-primary p-3 rounded-full mr-4">
+                                <i data-feather="clock" class="text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Question Time</h3>
+                        </div>
+                        <p class="text-gray-700">Every Tuesday and Thursday at precisely 2:04 PM (reflecting the 4 sides of a square), ministers face questions from members.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>feather.replace();</script>
+</body>
+</html>

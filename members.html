@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members - Square Parliament</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#1e3a8a'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen flex flex-col bg-gray-50">
+    <custom-navbar></custom-navbar>
+    
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <div class="flex justify-between items-center mb-8">
+            <h1 class="text-3xl font-bold text-primary">Members of the House</h1>
+            <div class="relative">
+                <input type="text" placeholder="Search members..." class="pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                <i data-feather="search" class="absolute left-3 top-2.5 text-gray-400"></i>
+            </div>
+        </div>
+
+        <!-- Party Filters -->
+        <div class="mb-8">
+            <h2 class="text-lg font-semibold mb-3 text-gray-700">Filter by Party</h2>
+            <div class="flex flex-wrap gap-2">
+                <button class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-opacity-90 transition">All</button>
+                <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-opacity-90 transition">Square Party</button>
+                <button class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-opacity-90 transition">People's Alliance</button>
+                <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-opacity-90 transition">Green Coalition</button>
+                <button class="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-opacity-90 transition">Liberal Democrats</button>
+                <button class="px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-opacity-90 transition">Independents</button>
+            </div>
+        </div>
+
+        <!-- Members Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Member Card 1 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="h-48 bg-primary flex items-center justify-center">
+                    <img src="http://static.photos/people/320x240/1" alt="John Square" class="h-full w-full object-cover">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-xl font-bold">John Square</h3>
+                            <p class="text-gray-600">Prime Minister</p>
+                        </div>
+                        <span class="px-2 py-1 bg-blue-500 text-white text-xs rounded-full">Square Party</span>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-gray-700"><i data-feather="map-pin" class="inline mr-2 w-4 h-4"></i> Capital District</p>
+                        <p class="text-gray-700 mt-1"><i data-feather="calendar" class="inline mr-2 w-4 h-4"></i> Since 2010</p>
+                    </div>
+                    <div class="mt-4 flex gap-3">
+                        <a href="#" class="text-primary hover:underline">Profile</a>
+                        <a href="#" class="text-primary hover:underline">Contact</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Member Card 2 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="h-48 bg-primary flex items-center justify-center">
+                    <img src="http://static.photos/people/320x240/2" alt="Sarah Round" class="h-full w-full object-cover">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-xl font-bold">Sarah Round</h3>
+                            <p class="text-gray-600">Opposition Leader</p>
+                        </div>
+                        <span class="px-2 py-1 bg-red-500 text-white text-xs rounded-full">People's Alliance</span>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-gray-700"><i data-feather="map-pin" class="inline mr-2 w-4 h-4"></i> West Hills</p>
+                        <p class="text-gray-700 mt-1"><i data-feather="calendar" class="inline mr-2 w-4 h-4"></i> Since 2015</p>
+                    </div>
+                    <div class="mt-4 flex gap-3">
+                        <a href="#" class="text-primary hover:underline">Profile</a>
+                        <a href="#" class="text-primary hover:underline">Contact</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Member Card 3 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="h-48 bg-primary flex items-center justify-center">
+                    <img src="http://static.photos/people/320x240/3" alt="Michael Angle" class="h-full w-full object-cover">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-xl font-bold">Michael Angle</h3>
+                            <p class="text-gray-600">Speaker of the House</p>
+                        </div>
+                        <span class="px-2 py-1 bg-blue-500 text-white text-xs rounded-full">Square Party</span>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-gray-700"><i data-feather="map-pin" class="inline mr-2 w-4 h-4"></i> North Bay</p>
+                        <p class="text-gray-700 mt-1"><i data-feather="calendar" class="inline mr-2 w-4 h-4"></i> Since 2008</p>
+                    </div>
+                    <div class="mt-4 flex gap-3">
+                        <a href="#" class="text-primary hover:underline">Profile</a>
+                        <a href="#" class="text-primary hover:underline">Contact</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Member Card 4 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="h-48 bg-primary flex items-center justify-center">
+                    <img src="http://static.photos/people/320x240/4" alt="Emma Line" class="h-full w-full object-cover">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-xl font-bold">Emma Line</h3>
+                            <p class="text-gray-600">Finance Minister</p>
+                        </div>
+                        <span class="px-2 py-1 bg-blue-500 text-white text-xs rounded-full">Square Party</span>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-gray-700"><i data-feather="map-pin" class="inline mr-2 w-4 h-4"></i> East Plains</p>
+                        <p class="text-gray-700 mt-1"><i data-feather="calendar" class="inline mr-2 w-4 h-4"></i> Since 2018</p>
+                    </div>
+                    <div class="mt-4 flex gap-3">
+                        <a href="#" class="text-primary hover:underline">Profile</a>
+                        <a href="#" class="text-primary hover:underline">Contact</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="col-span-full flex justify-center mt-8">
+                <nav class="inline-flex rounded-md shadow">
+                    <a href="#" class="px-4 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">Previous</a>
+                    <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-sm font-medium text-primary hover:bg-gray-50">1</a>
+                    <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">2</a>
+                    <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">3</a>
+                    <a href="#" class="px-4 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">Next</a>
+                </nav>
+            </div>
+        </div>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>feather.replace();</script>
+</body>
+</html>
