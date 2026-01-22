@@ -105,6 +105,11 @@ class CustomNavbar extends HTMLElement {
           font-weight: 600;
         }
 
+        ul a.active::after {
+  transition-delay: 0.1s;
+}
+
+
         /* Mobile button */
         .menu-btn {
           display: none;
@@ -167,7 +172,7 @@ class CustomNavbar extends HTMLElement {
           </button>
 
           <ul>
-            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="members.html">Members</a></li>
             <li><a href="history.html">History</a></li>
             <li><a href="map.html">House Map</a></li>
@@ -184,6 +189,32 @@ class CustomNavbar extends HTMLElement {
         </div>
       </nav>
     `;
+
+// --- Active page underline (FIXED) ---
+const path = window.location.pathname;
+const currentPage = path === '/' ? 'index.html' : path.split('/').pop();
+
+// Desktop links
+this.shadowRoot.querySelectorAll('ul a').forEach(link => {
+  const href = link.getAttribute('href');
+  if (href === currentPage) {
+    link.classList.add('active');
+  } else {
+    link.classList.remove('active');
+  }
+});
+
+// Mobile links
+this.shadowRoot.querySelectorAll('.mobile-panel a').forEach(link => {
+  const href = link.getAttribute('href');
+  if (href === currentPage) {
+    link.style.color = 'white';
+    link.style.fontWeight = '600';
+    link.style.background = 'rgba(255,255,255,0.06)';
+  }
+});
+
+
 
     const menuBtn = this.shadowRoot.querySelector('.menu-btn');
     const panel = this.shadowRoot.querySelector('.mobile-panel');
