@@ -1,112 +1,436 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Square Country House of Representatives</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1e40af',
-                        secondary: '#1e3a8a'
-                    }
-                }
-            }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parliament | Square Country</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0f2a44',
+            secondary: '#163a5f',
+            accent: '#2563eb',
+            partyA: '#43c564',
+            partyB: '#c93936',
+            partyC: '#3e6641',
+            partyD: '#fbe778',
+            partyE: '#6f6d6d'
+          }
         }
-    </script>
+      }
+    }
+  </script>
+  <style>
+  #dropdownOptions::-webkit-scrollbar {
+    width: 8px;
+  }
+  #dropdownOptions::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 8px;
+  }
+</style>
+
 </head>
-<body class="min-h-screen flex flex-col bg-gray-50">
-    <custom-navbar></custom-navbar>
-    
-    <main class="flex-grow container mx-auto px-4 py-8">
-        <!-- Hero Section -->
-        <section class="bg-primary text-white rounded-xl p-8 mb-8 shadow-lg">
-            <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-4xl font-bold mb-4">Square Country House of Representatives</h1>
-                <p class="text-xl mb-6">The democratic heart of Square Country, representing all 26 constituencies</p>
-                <div class="flex justify-center gap-4">
-                    <a href="members.html" class="bg-white text-primary px-6 py-2 rounded-lg font-medium hover:bg-opacity-90 transition">Meet Members</a>
-                    <a href="live.html" class="border-2 border-white px-6 py-2 rounded-lg font-medium hover:bg-white hover:bg-opacity-10 transition">Watch Live</a>
-                </div>
-            </div>
-        </section>
 
-        <!-- Current Session Video -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-bold mb-4 text-primary">Current Proceedings</h2>
-            <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                <div class="aspect-w-16 aspect-h-9">
-                    <iframe class="w-full h-96" src="https://www.youtube.com/embed/live_stream?channel=UCsR-L0u-4YT7FgJcY5jGfSw" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="p-4 bg-gray-100">
-                    <h3 class="font-semibold text-lg">House Session - Live Now</h3>
-                    <p class="text-gray-600">Debate on the Annual Budget Bill</p>
-                </div>
-            </div>
-        </section>
+<body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col">
 
-        <!-- Quick Links -->
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <a href="members.html" class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition group">
-                <div class="flex items-center mb-4">
-                    <i data-feather="users" class="text-primary mr-3"></i>
-                    <h3 class="text-xl font-bold text-primary">Members</h3>
-                </div>
-                <p class="text-gray-600 group-hover:text-gray-800">Meet the 26 representatives serving Square Country</p>
-            </a>
-            <a href="history.html" class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition group">
-                <div class="flex items-center mb-4">
-                    <i data-feather="book" class="text-primary mr-3"></i>
-                    <h3 class="text-xl font-bold text-primary">History</h3>
-                </div>
-                <p class="text-gray-600 group-hover:text-gray-800">Learn about our parliamentary traditions</p>
-            </a>
-            <a href="map.html" class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition group">
-                <div class="flex items-center mb-4">
-                    <i data-feather="map" class="text-primary mr-3"></i>
-                    <h3 class="text-xl font-bold text-primary">House Map</h3>
-                </div>
-                <p class="text-gray-600 group-hover:text-gray-800">Explore the parliamentary chambers</p>
-            </a>
-        </section>
+  <custom-navbar></custom-navbar>
 
-        <!-- Recent News -->
-        <section>
-            <h2 class="text-2xl font-bold mb-6 text-primary">Recent Parliamentary News</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <article class="bg-white rounded-xl shadow-md overflow-hidden">
-                    <img src="http://static.photos/blue/1024x576/5" alt="Parliament Session" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <span class="text-sm text-primary font-medium">Budget Debate</span>
-                        <h3 class="text-xl font-bold mt-1 mb-2">Finance Minister Presents Annual Budget</h3>
-                        <p class="text-gray-600 mb-4">The government's fiscal plan for the coming year includes significant investments in infrastructure and education.</p>
-                        <a href="#" class="text-primary font-medium hover:underline">Read more →</a>
-                    </div>
-                </article>
-                <article class="bg-white rounded-xl shadow-md overflow-hidden">
-                    <img src="http://static.photos/blue/1024x576/7" alt="Committee Meeting" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <span class="text-sm text-primary font-medium">Legislation</span>
-                        <h3 class="text-xl font-bold mt-1 mb-2">New Environmental Protection Bill Introduced</h3>
-                        <p class="text-gray-600 mb-4">The bill proposes stricter regulations on industrial emissions and expanded conservation areas.</p>
-                        <a href="#" class="text-primary font-medium hover:underline">Read more →</a>
-                    </div>
-                </article>
-            </div>
-        </section>
-    </main>
+  <!-- HERO -->
+  <section class="relative bg-gradient-to-br from-primary to-secondary text-white">
+    <div class="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="uppercase tracking-wider text-sm text-blue-200">
+          Parliament of Square Country
+        </span>
+        <h1 class="text-4xl md:text-5xl font-bold mt-3 mb-6">
+          House of Representatives
+        </h1>
+        <p class="text-lg text-blue-100 max-w-xl">
+          The principal legislative chamber of Square Country, representing
+          all 26 constituencies and holding the Government to account.
+        </p>
 
-    <custom-footer></custom-footer>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="members.html"
+             class="bg-white text-primary px-6 py-3 rounded-xl font-semibold shadow hover:bg-slate-100 transition">
+            View Members
+          </a>
+          <a href="live.html"
+             class="border border-white/60 px-6 py-3 rounded-xl font-semibold hover:bg-white/10 transition">
+            Watch Proceedings
+          </a>
+        </div>
+      </div>
 
-    <script src="components/navbar.js"></script>
-    <script src="components/footer.js"></script>
-    <script src="script.js"></script>
-    <script>feather.replace();</script>
+      <div class="hidden lg:block">
+        <div class="bg-white/10 backdrop-blur rounded-2xl p-6 shadow-xl">
+          <h3 class="font-semibold mb-2">Currently Sitting</h3>
+          <p class="text-blue-100 text-sm">
+            Oral Questions
+          </p>
+          <div class="mt-4 text-sm text-blue-200 flex items-center gap-2">
+            <i data-feather="radio"></i> Live now
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE SESSION -->
+<section class="bg-slate-900">
+  <div class="max-w-7xl mx-auto px-6 py-14 text-white">
+
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-2xl font-bold">Live Proceedings</h2>
+      <a href="live.html" class="text-blue-300 font-medium hover:underline">
+        Full coverage →
+      </a>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+
+      <!-- Video (Wide) -->
+      <div class="lg:col-span-2 bg-black rounded-2xl overflow-hidden shadow-xl">
+        <video
+          src="assets/luxon-waving-vid.mp4"
+          controls
+          autoplay
+          muted
+          class="w-full h-full max-h-[480px] object-cover"
+        ></video>
+      </div>
+
+      <!-- Context Panel -->
+      <aside class="bg-slate-800 rounded-2xl p-6 flex flex-col justify-between shadow-lg">
+        <div>
+          <span class="uppercase text-xs tracking-wider text-blue-300">
+            House Sitting
+          </span>
+
+          <h3 class="text-xl font-semibold mt-2 mb-3">
+            Question Time
+          </h3>
+
+          <p class="text-slate-300 text-sm mb-6">
+            Members question Ministers on matters of public importance,
+            followed by debate on the Budget Appropriations Bill.
+          </p>
+
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+              Live now
+            </li>
+            <li>📅 Sitting day: Tuesday</li>
+            <li>⏱ Estimated end: 5:30 PM</li>
+          </ul>
+        </div>
+
+        <a
+          href="live.html"
+          class="mt-6 inline-block bg-blue-600 hover:bg-blue-500
+                 text-white text-center py-3 rounded-xl font-semibold transition"
+        >
+          Watch full session
+        </a>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- KEY FUNCTIONS -->
+  <section class="bg-white border-y">
+    <div class="max-w-7xl mx-auto px-6 py-14">
+      <h2 class="text-2xl font-bold text-primary mb-10">
+        Parliamentary Information
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <a href="members.html" class="group">
+          <div class="bg-slate-50 p-6 rounded-2xl shadow hover:shadow-lg transition">
+            <i data-feather="users" class="text-primary mb-4"></i>
+            <h3 class="text-lg font-semibold mb-2">Members of Parliament</h3>
+            <p class="text-slate-600 group-hover:text-slate-800">
+              Profiles and constituencies of all 26 representatives.
+            </p>
+          </div>
+        </a>
+
+        <a href="history.html" class="group">
+          <div class="bg-slate-50 p-6 rounded-2xl shadow hover:shadow-lg transition">
+            <i data-feather="archive" class="text-primary mb-4"></i>
+            <h3 class="text-lg font-semibold mb-2">History & Traditions</h3>
+            <p class="text-slate-600 group-hover:text-slate-800">
+              Learn about the evolution of Square Country’s Parliament.
+            </p>
+          </div>
+        </a>
+
+        <a href="map.html" class="group">
+          <div class="bg-slate-50 p-6 rounded-2xl shadow hover:shadow-lg transition">
+            <i data-feather="map" class="text-primary mb-4"></i>
+            <h3 class="text-lg font-semibold mb-2">Chamber Map</h3>
+            <p class="text-slate-600 group-hover:text-slate-800">
+              Parliament's seating plans and layout of the House of Representatives.
+            </p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO REPRESENTS ME -->
+<section class="bg-white border-y">
+  <div class="max-w-7xl mx-auto px-6 py-14">
+    <h2 class="text-2xl font-bold text-gov mb-4">
+      Who Represents Me?
+    </h2>
+    <p class="text-slate-600 mb-6 max-w-xl">
+      Select your constituency to find your Member of Parliament.
+    </p>
+
+<div class="max-w-xl relative">
+  <label class="block text-sm font-medium text-slate-700 mb-2">
+    Select your electorate
+  </label>
+
+  <div
+    id="dropdownWrapper"
+    class="relative"
+  >
+    <button
+      id="dropdownBtn"
+      type="button"
+      class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3
+             flex items-center justify-between
+             shadow-sm hover:border-accent
+             focus:outline-none focus:ring-2 focus:ring-accent transition"
+      onclick="toggleDropdown()"
+    >
+      <span id="selectedValue" class="text-slate-500">
+        Choose an electorate
+      </span>
+      <i data-feather="chevron-down" class="w-4 h-4 text-slate-400"></i>
+    </button>
+
+    <!-- Dropdown Panel -->
+    <div
+      id="dropdownMenu"
+      class="absolute z-30 mt-2 w-full bg-white border border-slate-200
+             rounded-2xl shadow-xl hidden overflow-hidden"
+    >
+
+      <!-- Search -->
+      <div class="p-3 border-b bg-slate-50">
+        <input
+          id="electorateSearch"
+          type="text"
+          placeholder="Search electorates…"
+          class="w-full px-3 py-2 text-sm rounded-lg border
+                 focus:ring-2 focus:ring-accent outline-none"
+          oninput="filterElectorates()"
+        />
+      </div>
+
+      <!-- Options -->
+      <div
+        id="dropdownOptions"
+        class="max-h-60 overflow-y-auto divide-y text-sm"
+      ></div>
+    </div>
+  </div>
+</div>
+
+<div id="mpResult" class="mt-8 hidden"></div>
+
+
+<div id="mpResult" class="mt-8 hidden"></div>
+
+
+<div id="mpResult" class="mt-8 hidden"></div>
+
+  </div>
+</section>
+
+  <!-- NEWS -->
+  <section class="max-w-7xl mx-auto px-6 py-16">
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="text-2xl font-bold text-primary">
+        Parliamentary News
+      </h2>
+      <a href="#" class="text-accent font-medium hover:underline">
+        All news →
+      </a>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <article class="bg-white rounded-2xl shadow overflow-hidden">
+        <img src="http://static.photos/blue/1024x576/5"
+             class="h-56 w-full object-cover" />
+        <div class="p-6">
+          <span class="text-xs uppercase tracking-wide text-primary">
+            Budget
+          </span>
+          <h3 class="text-xl font-semibold mt-2 mb-3">
+            Finance Minister Delivers Annual Budget
+          </h3>
+          <p class="text-slate-600 mb-4">
+            The Government has outlined its fiscal priorities for the
+            coming year, focusing on infrastructure and education.
+          </p>
+          <a href="#" class="text-accent font-medium hover:underline">
+            Read article →
+          </a>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-2xl shadow overflow-hidden">
+        <img src="http://static.photos/blue/1024x576/7"
+             class="h-56 w-full object-cover" />
+        <div class="p-6">
+          <span class="text-xs uppercase tracking-wide text-primary">
+            Legislation
+          </span>
+          <h3 class="text-xl font-semibold mt-2 mb-3">
+            Defence Expansion Bill Introduced
+          </h3>
+          <p class="text-slate-600 mb-4">
+            New legislation proposes stronger emissions controls and
+            expanded conservation zones.
+          </p>
+          <a href="#" class="text-accent font-medium hover:underline">
+            Read article →
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <custom-footer></custom-footer>
+
+  <script src="components/navbar.js"></script>
+  <script src="components/footer.js"></script>
+  <script>feather.replace();</script>
+<script>
+const constituencies = [
+  { name: "Western Beaches", mp: "Trent McKenzie", party: "Liberty Party", color: "partyA", email: "trent.mckenzie@parliament.gov.sc" },
+  { name: "Square City", mp: "Erin Starling", party: "Square Country Greens", color: "partyC", email: "erin.starling@parliament.gov.sc" },
+  { name: "Surish Bridge", mp: "Norman Chylinski", party: "Liberty Party", color: "partyA", email: "norman.chylinski@parliament.gov.sc" },
+
+  { name: "Masterton", mp: "David Thornfield", party: "Freedoms Party", color: "partyB", email: "david.thornfield@parliament.gov.sc" },
+  { name: "Earlington", mp: "Campbell Craw", party: "Liberty Party", color: "partyA", email: "campbell.craw@parliament.gov.sc" },
+
+  { name: "New Dublin", mp: "Ryan Parker", party: "Liberty Party", color: "partyA", email: "ryan.parker@parliament.gov.sc" },
+  { name: "Wellingborough", mp: "Mark Andrews", party: "Liberty Party", color: "partyA", email: "mark.andrews@parliament.gov.sc" },
+
+  { name: "Ertonmont", mp: "Jacob Penrose", party: "Liberty Party", color: "partyA", email: "jacob.penrose@parliament.gov.sc" },
+  { name: "Doncastle", mp: "Greg Redfern", party: "Square Country First", color: "partyE", email: "greg.redfern@parliament.gov.sc" },
+
+  { name: "Cunningham", mp: "Ongoing By-Election", party: "", color: "", email: "" },
+  { name: "Queenstown", mp: "Max Kingswell", party: "Freedoms Party", color: "partyB", email: "aaron.bishop@parliament.sc" },
+
+  { name: "Kingsford", mp: "Hayden Marsh", party: "Liberty Party", color: "partyA", email: "hayden.marsh@parliament.gov.sc" },
+  { name: "Uma no Machi", mp: "Sarah Voss", party: "Innovation Party", color: "partyD", email: "clara.donnelly@parliament.sc" },  
+];
+</script>
+
+<script>
+const dropdownMenu = document.getElementById("dropdownMenu");
+const dropdownOptions = document.getElementById("dropdownOptions");
+const selectedValue = document.getElementById("selectedValue");
+const searchInput = document.getElementById("electorateSearch");
+
+let open = false;
+
+function toggleDropdown() {
+  open = !open;
+  dropdownMenu.classList.toggle("hidden", !open);
+  if (open) searchInput.focus();
+}
+
+function closeDropdown() {
+  open = false;
+  dropdownMenu.classList.add("hidden");
+}
+
+function selectElectorate(index) {
+  const c = constituencies[index];
+  selectedValue.textContent = c.name;
+  selectedValue.classList.remove("text-slate-500");
+  closeDropdown();
+  showMP(c);
+}
+
+function filterElectorates() {
+  const q = searchInput.value.toLowerCase();
+  renderOptions(
+    constituencies.filter(c =>
+      c.name.toLowerCase().includes(q)
+    )
+  );
+}
+
+function renderOptions(list) {
+  dropdownOptions.innerHTML = list.map(c => `
+    <button
+      onclick="selectElectorate(${constituencies.indexOf(c)})"
+      class="w-full px-4 py-3 text-left hover:bg-slate-100 transition"
+    >
+      ${c.name}
+    </button>
+  `).join("");
+}
+
+function showMP(c) {
+  const result = document.getElementById("mpResult");
+
+  result.className = "mt-8 bg-white rounded-2xl shadow p-6";
+  result.innerHTML = `
+    <h3 class="text-lg font-semibold mb-2">${c.name}</h3>
+
+    <p class="text-slate-700">
+      <strong>Member of Parliament:</strong> ${c.mp}
+    </p>
+
+    <p class="flex items-center gap-2 mt-1">
+      <span class="w-3 h-3 rounded-full bg-${c.color}"></span>
+      ${c.party}
+    </p>
+
+    <p class="mt-4 text-sm">
+      Email:
+      <a href="mailto:${c.email}" class="text-accent hover:underline">
+        ${c.email}
+      </a>
+    </p>
+  `;
+  result.classList.remove("hidden");
+}
+
+/* Initial render */
+renderOptions(constituencies);
+
+/* Click outside to close */
+document.addEventListener("click", e => {
+  if (!e.target.closest("#dropdownWrapper")) {
+    closeDropdown();
+  }
+});
+</script>
+
+
+
+
+
 </body>
 </html>
