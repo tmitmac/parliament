@@ -3,115 +3,197 @@ class CustomNavbar extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = `
       <style>
+        :host {
+          position: sticky;
+          top: 0;
+          z-index: 50;
+        }
+
         nav {
-          background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
-          padding: 1rem 2rem;
+          background: #0f2a44;
+          border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .container {
+          max-width: 1280px;
+          margin: 0 auto;
+          padding: 0.9rem 1.5rem;
           display: flex;
+          align-items: center;
           justify-content: space-between;
-          align-items: center;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+
+        /* Logo */
         .logo {
-          color: white;
-          font-weight: bold;
-          font-size: 1.5rem;
           display: flex;
           align-items: center;
-          gap: 0.5rem;
+          gap: 0.75rem;
+          color: white;
+          text-decoration: none;
+          font-weight: 700;
+          font-size: 1.1rem;
+          letter-spacing: 0.02em;
         }
-        .nav-links {
+
+        .logo-mark {
+          width: 34px;
+          height: 34px;
+          border-radius: 8px;
+          background: white;
           display: flex;
-          gap: 2rem;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .logo-mark span {
+          width: 16px;
+          height: 16px;
+          background: #0f2a44;
+          border-radius: 3px;
+          display: block;
+        }
+
+        .logo small {
+          display: block;
+          font-size: 0.65rem;
+          font-weight: 500;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: #c7d2fe;
+        }
+
+        /* Desktop nav */
+        ul {
+          display: flex;
           list-style: none;
+          gap: 1.75rem;
           margin: 0;
           padding: 0;
         }
-        .nav-links a {
-          color: white;
+
+        ul a {
+          color: #e5e7eb;
           text-decoration: none;
+          font-size: 0.95rem;
           font-weight: 500;
-          padding: 0.5rem 0;
+          padding: 0.35rem 0;
           position: relative;
-          transition: opacity 0.2s;
         }
-        .nav-links a:hover {
-          opacity: 0.9;
+
+        ul a:hover {
+          color: white;
         }
-        .nav-links a::after {
+
+        ul a::after {
           content: '';
           position: absolute;
-          bottom: 0;
           left: 0;
+          bottom: -6px;
           width: 0;
           height: 2px;
-          background-color: white;
-          transition: width 0.3s ease;
+          background: #93c5fd;
+          transition: width 0.25s ease;
         }
-        .nav-links a:hover::after {
+
+        ul a:hover::after,
+        ul a.active::after {
           width: 100%;
         }
-        .nav-links a.active {
+
+        ul a.active {
+          color: white;
           font-weight: 600;
         }
-        .nav-links a.active::after {
-          width: 100%;
-        }
-        .mobile-menu-btn {
+
+        /* Mobile button */
+        .menu-btn {
           display: none;
           background: none;
           border: none;
           color: white;
           cursor: pointer;
         }
-        @media (max-width: 768px) {
-          .mobile-menu-btn {
-            display: block;
-          }
-          .nav-links {
+
+        /* Mobile menu */
+        .mobile-panel {
+          display: none;
+          background: #0f2a44;
+          border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .mobile-panel a {
+          display: block;
+          padding: 0.9rem 1.5rem;
+          color: #e5e7eb;
+          text-decoration: none;
+          font-size: 0.95rem;
+          border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .mobile-panel a:hover {
+          background: rgba(255,255,255,0.06);
+          color: white;
+        }
+
+        .mobile-panel.show {
+          display: block;
+        }
+
+        @media (max-width: 900px) {
+          ul {
             display: none;
-            position: absolute;
-            top: 70px;
-            left: 0;
-            right: 0;
-            background: #1e3a8a;
-            flex-direction: column;
-            padding: 1rem 2rem;
-            gap: 1rem;
           }
-          .nav-links.show {
-            display: flex;
+
+          .menu-btn {
+            display: block;
           }
         }
       </style>
+
       <nav>
-        <a href="index.html" class="logo">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="24" height="24" rx="4" fill="white"/>
-            <rect x="6" y="6" width="12" height="12" rx="2" fill="#1e40af"/>
-          </svg>
-          Square Parliament
-        </a>
-        <button class="mobile-menu-btn">
-          <i data-feather="menu"></i>
-        </button>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="members.html">Members</a></li>
-          <li><a href="history.html">History</a></li>
-          <li><a href="map.html">House Map</a></li>
-          <li><a href="live.html">Live Proceedings</a></li>
-        </ul>
+        <div class="container">
+          <a href="index.html" class="logo">
+            <div class="logo-mark">
+              <span></span>
+            </div>
+            <div>
+              Square Parliament
+              <small>House of Representatives</small>
+            </div>
+          </a>
+
+          <button class="menu-btn" aria-label="Open menu">
+            <i data-feather="menu"></i>
+          </button>
+
+          <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="members.html">Members</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="map.html">House Map</a></li>
+            <li><a href="live.html">Live</a></li>
+          </ul>
+        </div>
+
+        <div class="mobile-panel">
+          <a href="index.html">Home</a>
+          <a href="members.html">Members</a>
+          <a href="history.html">History</a>
+          <a href="map.html">House Map</a>
+          <a href="live.html">Live Proceedings</a>
+        </div>
       </nav>
     `;
 
-    // Initialize mobile menu toggle
-    const menuButton = this.shadowRoot.querySelector('.mobile-menu-btn');
-    const navLinks = this.shadowRoot.querySelector('.nav-links');
-    
-    menuButton.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
+    const menuBtn = this.shadowRoot.querySelector('.menu-btn');
+    const panel = this.shadowRoot.querySelector('.mobile-panel');
+
+    menuBtn.addEventListener('click', () => {
+      panel.classList.toggle('show');
       feather.replace();
     });
+
+    feather.replace();
   }
 }
 
